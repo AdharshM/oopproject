@@ -126,6 +126,9 @@ public class Signup extends JFrame implements ActionListener{
       preparedStmt.execute();
       
       conn.close();
+            frame.setVisible(false);
+            dispose();
+            new Login();
         }
       else{
           new ErrorSign();

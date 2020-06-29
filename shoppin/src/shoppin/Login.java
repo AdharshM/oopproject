@@ -15,6 +15,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,9 +28,9 @@ import javax.swing.JTextField;
 
 public class Login extends JFrame implements ActionListener{
  JLabel l1, l2, l3, l4;
- JTextField tf1;
+ JTextField userf;
  JButton btn1, btn2;
- JPasswordField p1;
+ JPasswordField pswf;
  Login() {
   JFrame frame = new JFrame(" Login ");
   l1 = new JLabel("Login Form");
@@ -35,8 +39,8 @@ public class Login extends JFrame implements ActionListener{
 
   l2 = new JLabel("Username : ");
   l3 = new JLabel("Password : ");
-  tf1 = new JTextField();
-  p1 = new JPasswordField();
+  userf = new JTextField();
+  pswf = new JPasswordField();
   btn1 = new JButton("Login");
   l4= new JLabel("New User?");
   btn2=new JButton("Sign Up");
@@ -44,12 +48,50 @@ public class Login extends JFrame implements ActionListener{
   l2.setBounds(80, 70, 200, 30);
   l3.setBounds(80, 110, 200, 30);
   l4.setBounds(370, 220, 200, 30);
-  tf1.setBounds(300, 70, 200, 30);
-  p1.setBounds(300, 110, 200, 30);
+  userf.setBounds(300, 70, 200, 30);
+  pswf.setBounds(300, 110, 200, 30);
   btn1.setBounds(350, 160, 100, 30);
   btn2.setBounds(350, 260, 100, 30);
   
-   btn2.addActionListener(new ActionListener(){  
+  btn1.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent Ae){
+         try
+    {
+      // create a mysql database connection
+      String myDriver = "org.gjt.mm.mysql.Driver";
+      String myUrl = "jdbc:mysql://localhost/shopping";
+      Class.forName(myDriver);
+      Connection conn = DriverManager.getConnection(myUrl, "root", "");
+    
+      // create a sql date object so we can use it in our INSERT statement
+  
+      String chkquery=" SELECT * FROM users WHERE Username=? AND Password=?";
+      PreparedStatement chkstate= conn.prepareStatement(chkquery);
+      chkstate.setString(1,userf.getText());
+      chkstate.setString(2, new String(pswf.getPassword()));
+      ResultSet rs=chkstate.executeQuery();
+      if(!rs.next()){
+            new Autherror();
+            conn.close();
+            frame.setVisible(false);
+            dispose();
+            new Login();
+        }
+      else{
+          frame.setVisible(false);
+          dispose();
+          new Dashboard();
+      }
+    }
+    catch (Exception e)
+    {
+      System.err.println("Got an exception!");
+      System.err.println(e.getMessage());
+    }
+      }
+  });
+  
+  btn2.addActionListener(new ActionListener(){  
     public void actionPerformed(ActionEvent e){ 
             frame.setVisible(false);
             dispose();
@@ -59,9 +101,9 @@ public class Login extends JFrame implements ActionListener{
   
   frame.add(l1);
   frame.add(l2);
-  frame.add(tf1);
+  frame.add(userf);
   frame.add(l3);
-  frame.add(p1);
+  frame.add(pswf);
   frame.add(btn1);
   frame.add(l4);
   frame.add(btn2);

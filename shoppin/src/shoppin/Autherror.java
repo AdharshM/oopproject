@@ -19,12 +19,12 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class ErrorSign extends JFrame implements ActionListener{
+public class Autherror extends JFrame implements ActionListener{
     JFrame frame;
     JLabel L1;
-    ErrorSign(){
-        JFrame frame = new JFrame("Error Signup");
-        L1 = new JLabel("This User already exists");
+    Autherror(){
+        JFrame frame = new JFrame("Login Failed");
+        L1 = new JLabel("No such user");
         L1.setBounds(300, 30, 400, 30);
         frame.add(L1);
         frame.setSize(250,250);
