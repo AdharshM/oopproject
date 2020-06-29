@@ -100,11 +100,13 @@ public class Signup extends JFrame implements ActionListener{
     
       // create a sql date object so we can use it in our INSERT statement
   
-      String chkquery=" SELECT * FROM users WHERE Name=?";
+      String chkquery=" SELECT * FROM users WHERE Username=? AND Email=? AND Phone=?";
       PreparedStatement chkstate= conn.prepareStatement(chkquery);
       chkstate.setString(1,userf.getText());
+      chkstate.setString(2,emailf.getText());
+      chkstate.setString(3,phonef.getText());
       ResultSet rs=chkstate.executeQuery();
-      if(rs.next()){
+      if(!rs.next()){
            
       
       // the mysql insert statement
