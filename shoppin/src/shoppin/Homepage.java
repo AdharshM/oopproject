@@ -7,7 +7,7 @@ package shoppin;
 
 /**
  *
- * @author ADHARSH M NAIR
+ * @author ADHARSH M NAIR (12327979)
  */
 
 import java.awt.Color;
@@ -92,19 +92,15 @@ public class Homepage extends JFrame implements ActionListener{
     frame.add(discprice);
     frame.add(actprice);
     frame.add(productid);
-  //frame.add(l3);
-  //frame.add(p1);
     frame.add(dsh1);
     frame.add(dsh2);
     frame.add(dsh3);
-    frame.add(dsh4);
-    
+    frame.add(dsh4);    
     frame.add(prod1); frame.add(disc1); frame.add(act1); frame.add(proid1);
     frame.add(prod2); frame.add(disc2); frame.add(act2); frame.add(proid2);
     frame.add(prod3); frame.add(disc3); frame.add(act3); frame.add(proid3);
     
     frame.add(login);
- // frame.add(l4);
     frame.add(signup);
 
     frame.setSize(800, 800);
