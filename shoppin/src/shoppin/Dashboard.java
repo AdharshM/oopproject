@@ -37,7 +37,7 @@ public class Dashboard extends JFrame implements ActionListener{
 
   
   
-  catalogue = new JButton("Catalogue");
+  catalogue = new JButton("Login");
 
   search=new JButton("Search");
   logout = new JButton("Logout");

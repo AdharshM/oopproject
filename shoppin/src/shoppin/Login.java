@@ -55,14 +55,14 @@ public class Login extends JFrame implements ActionListener{
   
   btn1.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent Ae){
-    try
-{
- // create a mysql database connection
- String myDriver = "org.gjt.mm.mysql.Driver";
- String myUrl = "jdbc:mysql://localhost/shopping";
- Class.forName(myDriver);
- Connection conn = DriverManager.getConnection(myUrl, "root", "");
-
+         try
+    {
+      // create a mysql database connection
+      String myDriver = "org.gjt.mm.mysql.Driver";
+      String myUrl = "jdbc:mysql://localhost/shopping";
+      Class.forName(myDriver);
+      Connection conn = DriverManager.getConnection(myUrl, "root", "");
+    
       // create a sql date object so we can use it in our INSERT statement
   
       String chkquery=" SELECT * FROM users WHERE Username=? AND Password=?";
