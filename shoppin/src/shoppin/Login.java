@@ -7,7 +7,7 @@ package shoppin;
 
 /**
  *
- * @author NORTH KOREAN HOMIE
+ * @author  HOMIE
 	// change package names and other editable stuffs, :) 
  */
 

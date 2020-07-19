@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 29, 2020 at 07:10 PM
+-- Generation Time: Jul 19, 2020 at 12:20 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -25,6 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `item` varchar(300) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price/unit` float NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -33,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `product` varchar(25) NOT NULL,
   `discprice` float NOT NULL,
   `actprice` float NOT NULL,
-  `proid` int(6) NOT NULL
+  `proid` int(6) NOT NULL,
+  PRIMARY KEY (`proid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -41,9 +55,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`product`, `discprice`, `actprice`, `proid`) VALUES
-('Sunflower Oil(1 ltr)', 70, 100, 121),
-('Salt(1 kg)', 50, 60, 169),
-('Soap(Washing)', 70, 100, 137);
+('Washing Soap - 1kg', 70, 100, 121),
+('Salt - 1kg', 50, 60, 169),
+('Sunflower Oil - 1ltr', 70, 70, 137),
+('Onion - 1kg', 100, 100, 234);
 
 -- --------------------------------------------------------
 
@@ -69,7 +84,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`Name`, `Username`, `Password`, `Email`, `Address`, `Phone`) VALUES
 ('Adharsh M', 'samurai1729', 'tianchenglou', '1231@qq.cn', 'Kim Chaek District, North Korea', 797798677),
 ('Gennady', 'djflame123', 'dreamoon123', 'kimhansol@gg.co', 'Kochi, Kerala,India', 98979652),
-('Gennady', 'tourist343', 'thetopcoder@123', 'gennady@yandex.ru', 'ITMO University, St. petersburg, Russia', 989898989);
+('Gennady', 'tourist343', 'thetopcoder@123', 'gennady@yandex.ru', 'ITMO University, St. petersburg, Russia', 989898989),
+('Ren zhanni', 'kdsj123', ',znc,nfnk', '1231@qq.cn', 'zxzndkwjdkj', 79797979);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

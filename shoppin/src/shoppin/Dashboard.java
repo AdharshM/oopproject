@@ -31,7 +31,7 @@ public class Dashboard extends JFrame implements ActionListener{
  JPasswordField pswf;
  Dashboard() {
   JFrame frame = new JFrame(" DashBoard ");
-  l1 = new JLabel("DashBoard");
+  l1 = new JLabel("Welcome User");
   l1.setForeground(Color.blue);
   l1.setFont(new Font("Arial", Font.BOLD, 28));
 
@@ -62,7 +62,21 @@ public class Dashboard extends JFrame implements ActionListener{
             dispose();
             new Homepage();
         }  
-    });  
+    });
+search.addActionListener(new ActionListener(){  
+    public void actionPerformed(ActionEvent e){ 
+            frame.setVisible(false);
+            dispose();
+            new Search().setVisible(true);
+        }  
+    });
+catalogue.addActionListener(new ActionListener(){  
+    public void actionPerformed(ActionEvent e){ 
+            frame.setVisible(false);
+            dispose();
+            new Catalogue().setVisible(true);
+        }  
+    });
  }
     @Override
     public void actionPerformed(ActionEvent ae) {

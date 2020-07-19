@@ -84,7 +84,7 @@ public class Catalogue extends javax.swing.JFrame {
 
         jLabel3.setText("Onion  - 1Kg   ");
 
-        jLabel4.setText("Ghee - 500ml   ");
+        jLabel4.setText("Washing Soap - 1kg ");
 
         GHATC.setText("Add to Cart");
         GHATC.addActionListener(new java.awt.event.ActionListener() {
@@ -93,23 +93,23 @@ public class Catalogue extends javax.swing.JFrame {
             }
         });
 
-        onprice.setText("20.00");
+        onprice.setText("100.00");
 
-        ghprice.setText("335.00");
+        ghprice.setText("70.00");
 
         jLabel2.setText("Rs.");
 
-        jLabel5.setText("Rs.");
+        jLabel5.setText(" Rs.");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 51, 204));
         jLabel6.setText("CATALOGUE");
 
-        oilbl.setText("Oil - 1ltr");
+        oilbl.setText("Sunflower Oil - 1ltr");
 
         jLabel8.setText("Rs.");
 
-        oilprice.setText("200.00");
+        oilprice.setText("70.00");
 
         OATC.setText("Add To Cart");
         OATC.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +122,7 @@ public class Catalogue extends javax.swing.JFrame {
 
         jLabel9.setText("Rs.");
 
-        SAPRICE.setText("15.00");
+        SAPRICE.setText("50.00");
 
         SALTATC.setText("Add To Cart");
         SALTATC.addActionListener(new java.awt.event.ActionListener() {
@@ -147,17 +147,10 @@ public class Catalogue extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(161, 161, 161)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(OilSpin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7))
-                                .addGap(60, 60, 60)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(OilSpin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
                             .addComponent(oilbl)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel4))
                         .addContainerGap(368, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Account)
@@ -180,23 +173,28 @@ public class Catalogue extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(ONQTY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel3))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(36, 36, 36)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(onprice))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(32, 32, 32)
                                                 .addComponent(ONATC, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(ghprice, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(oilprice))
-                                    .addComponent(OATC, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addComponent(SAPRICE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ghprice)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(oilprice))
+                                .addComponent(OATC))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(SAPRICE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -219,15 +217,15 @@ public class Catalogue extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ONQTY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ONATC))
-                .addGap(18, 18, 18)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ghprice)
-                    .addComponent(jLabel5))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GHQTY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GHATC))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GHATC)
+                    .addComponent(GHQTY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oilbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,10 +236,11 @@ public class Catalogue extends javax.swing.JFrame {
                     .addComponent(OATC)
                     .addComponent(OilSpin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(SAPRICE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel9)
+                        .addComponent(SAPRICE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaltSpin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,8 +260,8 @@ public class Catalogue extends javax.swing.JFrame {
     private void ViewCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewCartActionPerformed
         // TODO add your handling code here:
         //new cart();
-        setVisible(false);
-        dispose();
+       new Cart().setVisible(true);
+       dispose();
     }//GEN-LAST:event_ViewCartActionPerformed
 
     private void ONATCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ONATCActionPerformed

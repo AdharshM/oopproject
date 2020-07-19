@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 05, 2020 at 09:17 AM
+-- Generation Time: Jul 19, 2020 at 12:20 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -30,19 +30,10 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE IF NOT EXISTS `cart` (
-  `item` varchar(250) NOT NULL,
+  `item` varchar(300) NOT NULL,
   `qty` int(11) NOT NULL,
   `price/unit` float NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`item`, `qty`, `price/unit`) VALUES
-('Onion  - 1Kg   ', 4, 20),
-('Salt - 1kg', 2, 15),
-('Oil - 1ltr', 5, 200);
 
 -- --------------------------------------------------------
 
@@ -64,9 +55,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`product`, `discprice`, `actprice`, `proid`) VALUES
-('Sunflower Oil(1 ltr)', 70, 100, 121),
-('Salt(1 kg)', 50, 60, 169),
-('Soap(Washing)', 70, 100, 137);
+('Washing Soap - 1kg', 70, 100, 121),
+('Salt - 1kg', 50, 60, 169),
+('Sunflower Oil - 1ltr', 70, 70, 137),
+('Onion - 1kg', 100, 100, 234);
 
 -- --------------------------------------------------------
 

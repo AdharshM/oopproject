@@ -41,6 +41,8 @@ public class Checkout extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +81,15 @@ public class Checkout extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Your Password :");
+
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,9 +111,13 @@ public class Checkout extends javax.swing.JFrame {
                                 .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGap(136, 136, 136)
-                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel4))
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                                .addComponent(jPasswordField1))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(jButton1)))
@@ -125,9 +140,13 @@ public class Checkout extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(90, 90, 90))
         );
 
         pack();
@@ -154,9 +173,10 @@ public class Checkout extends javax.swing.JFrame {
 
       // create a sql date object so we can use it in our INSERT statement
   
-      String chkquery=" SELECT * FROM users WHERE Username=?";
+      String chkquery=" SELECT * FROM users WHERE Username=? AND Password=?";
       PreparedStatement chkstate= conn.prepareStatement(chkquery);
       chkstate.setString(1,jTextField3.getText());
+      chkstate.setString(2, new String(jPasswordField1.getPassword()));
 
       ResultSet rs=chkstate.executeQuery();
             if(!rs.next()){
@@ -164,7 +184,13 @@ public class Checkout extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(this, "Proceeding to Payment");
+                String chk1="DELETE FROM cart";
+                PreparedStatement chk2= conn.prepareStatement(chk1);
+                int st1=chk2.executeUpdate();
+                if(st1==0){
+                new Dashboard().setVisible(true);
                 dispose();
+                }
             }
         }
         catch (Exception e)
@@ -174,6 +200,10 @@ public class Checkout extends javax.swing.JFrame {
     }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,6 +246,8 @@ public class Checkout extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
