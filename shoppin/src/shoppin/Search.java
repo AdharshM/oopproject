@@ -104,7 +104,7 @@ public class Search extends javax.swing.JFrame {
     
       // create a sql date object so we can use it in our INSERT statement
   
-      String chkquery=" SELECT * FROM cart WHERE item=?";
+      String chkquery=" SELECT * FROM products WHERE product=?";
       PreparedStatement chkstate= conn.prepareStatement(chkquery);
       chkstate.setString(1,jTextField1.getText());
       ResultSet rs=chkstate.executeQuery();
