@@ -84,8 +84,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`Name`, `Username`, `Password`, `Email`, `Address`, `Phone`) VALUES
 ('Adharsh M', 'samurai1729', 'tianchenglou', '1231@qq.cn', 'Kim Chaek District, North Korea', 797798677),
 ('Gennady', 'djflame123', 'dreamoon123', 'kimhansol@gg.co', 'Kochi, Kerala,India', 98979652),
-('Gennady', 'tourist343', 'thetopcoder@123', 'gennady@yandex.ru', 'ITMO University, St. petersburg, Russia', 989898989),
-('Ren zhanni', 'kdsj123', ',znc,nfnk', '1231@qq.cn', 'zxzndkwjdkj', 79797979);
+('Gennady', 'tourist343', 'thetopcoder@123', 'gennady@yandex.ru', 'ITMO University, St. petersburg, Russia', 989898989)
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
